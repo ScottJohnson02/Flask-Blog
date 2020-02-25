@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %} {{ post['title'] }}{% endblock %}</h1>
+<div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+{% endblock %}
+
+{% block content %}
+
+<p>{{ request.form['body'] or post['body'] }}</p>
+
+{% endblock %}
